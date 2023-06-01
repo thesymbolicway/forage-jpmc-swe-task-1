@@ -32,28 +32,50 @@ N = 500
 def getDataPoint(quote):
     """ Produce all the needed values to generate a datapoint """
     """ ------------- Update this function ------------- """
-    stock = quote['stock']
-    bid_price = float(quote['top_bid']['price'])
-    ask_price = float(quote['top_ask']['price'])
-    price = bid_price
+    if quote is None:
+        return None, None, None, None
+    stock = quote.get('stock')
+    bid_price = quote.get('top_bid', {}).get('price')
+    ask_price = quote.get('top_ask', {}).get('price')
+    if stock is None or bid_price is None or ask_price is None:
+        return None, None, None, None
+    price = (float(bid_price) + float(ask_price)) / 2
     return stock, bid_price, ask_price, price
+
+
+
 
 
 def getRatio(price_a, price_b):
     """ Get ratio of price_a and price_b """
     """ ------------- Update this function ------------- """
+    if price_b != 0:
+        return price_a / price_b
     return 1
 
 
 # Main
 if __name__ == "__main__":
     # Query the price once every N seconds.
-    for _ in iter(range(N)):
-        quotes = json.loads(urllib.request.urlopen(QUERY.format(random.random())).read())
+    for _ in range(N):
+        try:
+            quotes = json.loads(urllib.request.urlopen(QUERY.format(random.random())).read())
+        except Exception as e:
+            print("Error retrieving quotes:", e)
+            continue
 
         """ ----------- Update to get the ratio --------------- """
+        prices = {}  # Dictionary to store stock prices
         for quote in quotes:
+            if quote is None:
+                continue
             stock, bid_price, ask_price, price = getDataPoint(quote)
+            prices[stock] = price  # Store the price for each stock
             print("Quoted %s at (bid:%s, ask:%s, price:%s)" % (stock, bid_price, ask_price, price))
 
-        print("Ratio %s" % getRatio(price, price))
+        if 'ABC' in prices and 'DEF' in prices:
+            ratio = getRatio(prices['ABC'], prices['DEF'])  # Compute the ratio of stock prices
+            print("Ratio %s" % ratio)
+        else:
+            print("Error: Missing stock prices")
+
