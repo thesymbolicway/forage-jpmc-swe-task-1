@@ -1,0 +1,47 @@
+commit b2bf792e8095c10d4a11f1b8ecc02d9e6b9ccaf0
+Author: Daniel <daniel.arisa@yahoo.com>
+Date:   Thu Jun 1 02:42:48 2023 -0500
+
+    Task 1 patch
+
+commit 90eb85d58f333ec40c02059f8d52bb84d5be62b9
+Author: Daniel <daniel.arisa@yahoo.com>
+Date:   Thu Jun 1 02:42:03 2023 -0500
+
+    Fix issue with stock price calculation
+
+commit 879221fec2b863d37d5b493f02a530a8098ef6ef
+Author: Joe Ferrer <joe@theforage.com>
+Date:   Wed Mar 1 00:11:51 2023 +1100
+
+    Re-add sample unit test
+
+commit 24707a7c3f267047838c97f07e5ff52284f7be6a
+Author: Joe Ferrer <joe@theforage.com>
+Date:   Wed Mar 1 00:10:28 2023 +1100
+
+    Rename client and server files
+
+commit bd3f50e4d3e3eb0d620411dddd7ef054702c5e52
+Author: josiahdc <josiah.chapman@gmail.com>
+Date:   Wed Oct 5 12:54:37 2022 -0700
+
+    Added Requirements
+
+commit bf70ef051eeddab996ef802be432e63ef7c61cf7
+Author: Josiah Chapman <josiah.chapman@gmail.com>
+Date:   Tue Aug 2 14:41:57 2022 -0700
+
+    initial commit
+
+commit 5ae952a938c1774607f6bfba9d769f70e587861f
+Author: Josiah Chapman <35126739+josiahdc@users.noreply.github.com>
+Date:   Tue Aug 2 14:15:54 2022 -0700
+
+    Update README.md
+
+commit fc80355cf17a2f1fec056987e747f66b9ba5e502
+Author: Josiah Chapman <35126739+josiahdc@users.noreply.github.com>
+Date:   Tue Aug 2 14:15:09 2022 -0700
+
+    Initial commit
